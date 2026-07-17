@@ -396,9 +396,9 @@ body{
 }
 
 /* ── CONTACT ── */
-.contact-wrap{max-width:560px}
+.contact-wrap{width:100%}
 .contact-intro{font-size:1.12rem;color:#d0ccdf;line-height:1.85;margin-bottom:2rem}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
 .clink{
   display:flex;align-items:center;gap:.75rem;
   padding:1rem 1.4rem;border-radius:12px;
@@ -447,7 +447,7 @@ body{
   .section-wrap{padding:4rem 1.75rem;padding-top:5rem}
   #hero.section-wrap{padding-top:5.5rem}
   .skills-cols{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr 1fr}
   .about-grid{grid-template-columns:1fr}
   .projects-list{grid-template-columns:1fr}
   .timeline{grid-template-columns:1fr}
