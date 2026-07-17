@@ -133,11 +133,29 @@ body{
   display:none;position:fixed;top:0;left:0;right:0;z-index:200;
   height:60px;align-items:center;justify-content:space-between;
   padding:0 1.5rem;
-  background:rgba(13,11,20,0.9);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.05);
+  background:rgba(13,11,20,0.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
 }
-.mob-logo{font-size:1rem;font-weight:900;background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mob-logo{font-size:1.1rem;font-weight:900;background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .mob-actions{display:flex;gap:.6rem;align-items:center}
+.mob-menu-btn{background:none;border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#d0ccdf;cursor:pointer;padding:.35rem .5rem;display:flex;align-items:center;transition:border-color .2s,color .2s}
+.mob-menu-btn:hover{border-color:rgba(167,139,250,0.5);color:#a78bfa}
+#mob-menu-drawer{
+  display:none;position:fixed;top:60px;left:0;right:0;bottom:0;z-index:199;
+  background:rgba(13,11,20,0.97);backdrop-filter:blur(20px);
+  overflow-y:auto;padding:1.5rem 1.5rem 3rem;
+}
+#mob-menu-drawer.open{display:block}
+.mob-drawer-nav{display:flex;flex-direction:column;gap:.25rem;margin-top:.5rem}
+.mob-drawer-nav a{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.9rem 1rem;border-radius:10px;
+  color:#d0ccdf;text-decoration:none;font-size:1.08rem;font-weight:500;
+  border:1px solid transparent;transition:all .15s;
+}
+.mob-drawer-nav a .nav-num{font-family:'Fira Code',monospace;font-size:.82rem;color:#6b647e;min-width:2rem}
+.mob-drawer-nav a:hover{background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.15);color:#f0eeff}
+.mob-drawer-nav a:hover .nav-num{color:#a78bfa}
 
 /* ══════════════════════════════
    MAIN CONTENT
@@ -471,7 +489,8 @@ body{
   .skill-tags{gap:.4rem}
   .skill-tag{font-size:.8rem;padding:.3rem .65rem}
   .pcard{padding:1.25rem}
-  .contact-grid{gap:.6rem}
+  .contact-grid{grid-template-columns:1fr;gap:.6rem}
+  .contact-intro{font-size:.97rem}
   .clink{padding:.85rem 1.1rem;font-size:.95rem}
 }
 </style>
@@ -533,8 +552,21 @@ body{
   <div class="mob-logo">IR.</div>
   <div class="mob-actions">
     <button class="lang-btn" onclick="toggleLang()" style="width:auto;padding:.35rem .7rem" id="lang-btn-mob">EN</button>
-    <a href="mailto:rignacio871@gmail.com" class="btn-primary" style="padding:.4rem .9rem;font-size:.89rem" data-es="Contacto" data-en="Contact">Contacto</a>
+    <button class="mob-menu-btn" onclick="toggleMobMenu()" aria-label="Menú" id="mob-menu-btn">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
+</div>
+<div id="mob-menu-drawer">
+  <nav class="mob-drawer-nav">
+    <a href="#hero"    onclick="closeMobMenu()" data-es="Inicio"          data-en="Home"><span class="nav-num">00.</span>Inicio</a>
+    <a href="#about"   onclick="closeMobMenu()" data-es="Sobre mí"        data-en="About"><span class="nav-num">01.</span>Sobre mí</a>
+    <a href="#experience" onclick="closeMobMenu()" data-es="Experiencia"  data-en="Experience"><span class="nav-num">02.</span>Experiencia</a>
+    <a href="#skills"  onclick="closeMobMenu()" data-es="Skills"          data-en="Skills"><span class="nav-num">03.</span>Skills</a>
+    <a href="#projects" onclick="closeMobMenu()" data-es="Proyectos"      data-en="Projects"><span class="nav-num">04.</span>Proyectos</a>
+    <a href="#certs"   onclick="closeMobMenu()" data-es="Certificaciones" data-en="Certifications"><span class="nav-num">05.</span>Certificaciones</a>
+    <a href="#contact" onclick="closeMobMenu()" data-es="Contacto"        data-en="Contact"><span class="nav-num">06.</span>Contacto</a>
+  </nav>
 </div>
 
 <!-- ══ MAIN ══ -->
@@ -850,6 +882,16 @@ document.querySelectorAll('.pcard,.exp-card').forEach(card=>{
     card.style.transform='';
     card.style.transition='transform .4s ease,border-color .25s,box-shadow .25s';
   });
+});
+
+/* ── MOBILE MENU ── */
+const mobDrawer=document.getElementById('mob-menu-drawer');
+function toggleMobMenu(){mobDrawer.classList.toggle('open')}
+function closeMobMenu(){mobDrawer.classList.remove('open')}
+// close on outside click
+document.addEventListener('click',e=>{
+  if(mobDrawer.classList.contains('open')&&!mobDrawer.contains(e.target)&&!document.getElementById('mob-menu-btn').contains(e.target))
+    closeMobMenu();
 });
 
 /* ── LANG TOGGLE ── */
