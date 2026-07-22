@@ -444,21 +444,6 @@ body{
 .clink-icon{display:flex;align-items:center;flex-shrink:0}
 .contact-note{font-size:.95rem;color:#6b647e;font-family:'Fira Code',monospace}
 
-/* ── HS FORM ── */
-.hs-form-section{margin-top:2.5rem}
-.hs-form-section h3{font-size:1.05rem;font-weight:600;color:#c4b5fd;margin-bottom:1.25rem;font-family:'Fira Code',monospace}
-#hs-contact-form .hs-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-#hs-contact-form .hs_email,#hs-contact-form .hs_message,#hs-contact-form .hs-submit{grid-column:1/-1}
-#hs-contact-form .hs-form-field>label{display:block;font-size:.78rem;font-weight:600;color:#6b647e;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.45rem}
-#hs-contact-form .hs-input{width:100%;box-sizing:border-box;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:8px;color:#f0eeff;padding:.65rem 1rem;font-size:.95rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;outline:none}
-#hs-contact-form .hs-input:focus{border-color:rgba(167,139,250,0.5);box-shadow:0 0 0 3px rgba(124,58,237,0.12)}
-#hs-contact-form textarea.hs-input{min-height:130px;resize:vertical}
-#hs-contact-form .hs-button.primary{background:linear-gradient(135deg,#7c3aed,#a78bfa);border:none;border-radius:8px;color:#fff;cursor:pointer;font-size:.95rem;font-weight:600;padding:.75rem 2rem;transition:opacity .2s,transform .2s,box-shadow .2s;letter-spacing:.02em}
-#hs-contact-form .hs-button.primary:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,0.3)}
-#hs-contact-form .hs-error-msgs{list-style:none;padding:0;margin:.3rem 0 0}
-#hs-contact-form .hs-error-msgs li{color:#f87171;font-size:.8rem}
-#hs-contact-form .submitted-message{color:#a78bfa;font-size:1rem;padding:1rem 0}
-
 /* ── FOOTER ── */
 #footer{
   margin-left:300px;padding:1.75rem 4rem 1.75rem 3rem;
@@ -517,20 +502,6 @@ body{
   .clink{padding:.85rem 1.1rem;font-size:.95rem}
 }
 
-/* ── HUBSPOT FORM ── */
-.hs-form-section{margin-top:2.5rem}
-.hs-form-section h3{font-size:1.1rem;font-weight:600;color:#f0eeff;margin-bottom:1.25rem;letter-spacing:-.01em}
-.hs-form-frame{width:100%}
-.hs-form-frame form .hs-form-field>label{color:#d0ccdf!important;font-size:.95rem!important;margin-bottom:.35rem!important;display:block}
-.hs-form-frame form input[type=text],
-.hs-form-frame form input[type=email],
-.hs-form-frame form textarea{background:rgba(255,255,255,0.05)!important;border:1px solid rgba(255,255,255,0.12)!important;border-radius:10px!important;color:#f0eeff!important;padding:.65rem 1rem!important;font-family:'Inter',sans-serif!important;font-size:1rem!important;width:100%!important;box-sizing:border-box!important;transition:border-color .2s!important}
-.hs-form-frame form input:focus,
-.hs-form-frame form textarea:focus{border-color:rgba(167,139,250,0.5)!important;outline:none!important}
-.hs-form-frame form .hs-button{background:linear-gradient(135deg,#a78bfa,#7c3aed)!important;color:#fff!important;border:none!important;border-radius:10px!important;padding:.72rem 1.6rem!important;font-weight:600!important;font-size:1.06rem!important;cursor:pointer!important;margin-top:.5rem!important;transition:opacity .2s,transform .2s!important}
-.hs-form-frame form .hs-button:hover{opacity:.88!important;transform:translateY(-2px)!important}
-.hs-form-frame form .hs-error-msgs{list-style:none!important}
-.hs-form-frame form .hs-error-msgs li{color:#f87171!important;font-size:.85rem!important;margin-top:.25rem}
 </style>
 
 <!-- HubSpot Tracking -->
@@ -851,17 +822,9 @@ body{
         </a>
       </div>
       <p class="contact-note reveal reveal-d2" data-es="// Respondo en menos de 24 horas" data-en="// I reply within 24 hours">// Respondo en menos de 24 horas</p>
-      <div class="hs-form-section reveal reveal-d3">
-        <h3 data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</h3>
-        <div id="hs-contact-form"></div>
-      </div>
+            </div>
       <!-- HubSpot Contact Form -->
-      <div class="hs-form-section reveal reveal-d3">
-        <h3 data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</h3>
-        <script src="https://js.hsforms.net/forms/embed/51770218.js" defer></script>
-        <div class="hs-form-frame" data-region="na1" data-form-id="7a719a43-b0c2-4fdf-add1-d87e38e0868d" data-portal-id="51770218"></div>
-      </div>
-    </div>
+          </div>
   </div>
 
 </main>
@@ -963,17 +926,6 @@ function toggleLang(){
     if(v)el.innerHTML=v;
   });
 }
-</script>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<script>
-hbspt.forms.create({
-  region:"na1",
-  portalId:"51770218",
-  formId:"7a719a43-b0c2-4fdf-add1-d87e38e0868d",
-  target:"#hs-contact-form",
-  cssRequired:"",
-  css:""
-});
 </script>
 </body>
 </html>
