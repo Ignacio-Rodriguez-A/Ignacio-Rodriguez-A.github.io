@@ -501,7 +501,25 @@ body{
   .contact-intro{font-size:.97rem}
   .clink{padding:.85rem 1.1rem;font-size:.95rem}
 }
+
+/* ── HUBSPOT FORM ── */
+.hs-form-section{margin-top:2.5rem}
+.hs-form-section h3{font-size:1.1rem;font-weight:600;color:#f0eeff;margin-bottom:1.25rem;letter-spacing:-.01em}
+.hs-form-frame{width:100%}
+.hs-form-frame form .hs-form-field>label{color:#d0ccdf!important;font-size:.95rem!important;margin-bottom:.35rem!important;display:block}
+.hs-form-frame form input[type=text],
+.hs-form-frame form input[type=email],
+.hs-form-frame form textarea{background:rgba(255,255,255,0.05)!important;border:1px solid rgba(255,255,255,0.12)!important;border-radius:10px!important;color:#f0eeff!important;padding:.65rem 1rem!important;font-family:'Inter',sans-serif!important;font-size:1rem!important;width:100%!important;box-sizing:border-box!important;transition:border-color .2s!important}
+.hs-form-frame form input:focus,
+.hs-form-frame form textarea:focus{border-color:rgba(167,139,250,0.5)!important;outline:none!important}
+.hs-form-frame form .hs-button{background:linear-gradient(135deg,#a78bfa,#7c3aed)!important;color:#fff!important;border:none!important;border-radius:10px!important;padding:.72rem 1.6rem!important;font-weight:600!important;font-size:1.06rem!important;cursor:pointer!important;margin-top:.5rem!important;transition:opacity .2s,transform .2s!important}
+.hs-form-frame form .hs-button:hover{opacity:.88!important;transform:translateY(-2px)!important}
+.hs-form-frame form .hs-error-msgs{list-style:none!important}
+.hs-form-frame form .hs-error-msgs li{color:#f87171!important;font-size:.85rem!important;margin-top:.25rem}
 </style>
+
+<!-- HubSpot Tracking -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51770218.js"></script>
 </head>
 <body>
 
@@ -818,6 +836,12 @@ body{
         </a>
       </div>
       <p class="contact-note reveal reveal-d2" data-es="// Respondo en menos de 24 horas" data-en="// I reply within 24 hours">// Respondo en menos de 24 horas</p>
+      <!-- HubSpot Contact Form -->
+      <div class="hs-form-section reveal reveal-d3">
+        <h3 data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</h3>
+        <script src="https://js.hsforms.net/forms/embed/51770218.js" defer></script>
+        <div class="hs-form-frame" data-region="na1" data-form-id="7a719a43-b0c2-4fdf-add1-d87e38e0868d" data-portal-id="51770218"></div>
+      </div>
     </div>
   </div>
 
